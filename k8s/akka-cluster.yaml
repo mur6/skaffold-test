@@ -1,7 +1,7 @@
 apiVersion: app.lightbend.com/v1alpha1
 kind: AkkaCluster
 metadata:
-  name: appka
+  name: akka-cluster-test
 spec:
   replicas: 3
   template:
