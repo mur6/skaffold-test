@@ -1,0 +1,7 @@
+apiVersion: skaffold/v1beta15
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./k8s/akka-cluster-operator/deploy/*
+      - ./k8s/akka-cluster.yaml

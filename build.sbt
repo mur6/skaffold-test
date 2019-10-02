@@ -4,7 +4,7 @@ val akkaHttpVersion = "10.1.10"
 lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging, AshScriptPlugin, DockerPlugin)
   .settings(
-    name := "akka-http-test",
+    name := "akka-cluster-test",
     scalaVersion := "2.12.8",
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,

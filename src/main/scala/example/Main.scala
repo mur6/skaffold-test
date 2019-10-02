@@ -6,7 +6,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 
 object Main extends App {
-  implicit val system = ActorSystem("akka-http-test")
+  implicit val system = ActorSystem("akka-cluster-test")
   implicit val materializer = ActorMaterializer()
   implicit val executionContext = system.dispatcher
 
