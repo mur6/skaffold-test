@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akka-cluster-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: akka-cluster-operator
+  template:
+    metadata:
+      labels:
+        name: akka-cluster-operator
+    spec:
+      serviceAccountName: akka-cluster-operator
+      containers:
+        - name: akka-cluster-operator
+          image: lightbend-docker-registry.bintray.io/lightbend/akkacluster-operator:latest
+          command:
+          - akka-cluster-operator
+          imagePullPolicy: Always
+          resourceLimits:
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "akka-cluster-operator"
