@@ -11,7 +11,13 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
       "com.typesafe.akka" %% "akka-stream" % akkaVersion,
       "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+      "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion,
+      "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
+      "com.typesafe.akka" %% "akka-persistence" % akkaVersion,
+      "com.typesafe.akka" %% "akka-discovery" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+      "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
+      "com.github.TanUkkii007" %% "akka-cluster-custom-downing" % "0.0.12",
       "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management-cluster-http" % akkaManagementVersion,
@@ -20,6 +26,7 @@ lazy val root = (project in file("."))
     ),
     dockerBaseImage := "java:8-jdk-alpine",
     version in Docker := "latest",
+    daemonUser in Docker := "root",
     dockerExposedPorts := Seq(8080, 8558, 2552),
     dockerUsername := Some("mur6")
   )
