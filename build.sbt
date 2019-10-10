@@ -7,6 +7,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "akka-cluster-test",
     scalaVersion := "2.12.8",
+    resolvers += Resolver.bintrayRepo("tanukkii007", "maven"),
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
       "com.typesafe.akka" %% "akka-stream" % akkaVersion,
@@ -17,7 +18,7 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-discovery" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
-      "com.github.TanUkkii007" %% "akka-cluster-custom-downing" % "0.0.12",
+      "com.github.TanUkkii007" %% "akka-cluster-custom-downing" % "0.0.13",
       "com.ajjpj.simple-akka-downing" %% "simple-akka-downing" % "0.9.1",
       "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management" % akkaManagementVersion,
