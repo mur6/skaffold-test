@@ -18,6 +18,7 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
       "com.github.TanUkkii007" %% "akka-cluster-custom-downing" % "0.0.12",
+      "com.ajjpj.simple-akka-downing" %% "simple-akka-downing" % "0.9.1",
       "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management-cluster-http" % akkaManagementVersion,

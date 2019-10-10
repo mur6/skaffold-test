@@ -3,7 +3,7 @@ kind: AkkaCluster
 metadata:
   name: akka-cluster-test
 spec:
-  replicas: 3
+  replicas: 5
   template:
     spec:
       containers:
@@ -30,3 +30,11 @@ spec:
               containerPort: 2552
             - name: management
               containerPort: 8558
+          # Add Linux Capabilities for to operate network routes
+          # https://www.tsugihagi.net/entry/2014/10/05/083120
+          # https://www.weave.works/blog/container-capabilities-kubernetes/
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - NET_ADMIN

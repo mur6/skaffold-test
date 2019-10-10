@@ -1,8 +1,5 @@
 package example
 
-// import java.util.UUID
-import java.util.concurrent.TimeUnit
-
 import akka.actor.{Actor, ActorLogging}
 import akka.cluster.sharding.ShardRegion
 

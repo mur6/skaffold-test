@@ -16,6 +16,7 @@ deploy:
     manifests:
       - ./k8s/akka-cluster-operator/deploy/*
       - ./k8s/akka-cluster.yaml
+      # - ./k8s/akka-cluster2.yaml
 portForward:
   - resourceType: deployment
     resourceName: akka-cluster-test
