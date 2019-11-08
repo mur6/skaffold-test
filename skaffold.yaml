@@ -14,7 +14,10 @@ build:
 deploy:
   kubectl:
     manifests:
-      - ./k8s/akka-cluster-operator/deploy/*
+      - ./k8s/akka-cluster-operator/deploy/operator.yaml
+      - ./k8s/akka-cluster-operator/deploy/role.yaml
+      - ./k8s/akka-cluster-operator/deploy/role_binding.yaml
+      - ./k8s/akka-cluster-operator/deploy/service_account.yaml
       - ./k8s/akka-cluster.yaml
       # - ./k8s/akka-cluster2.yaml
 portForward:

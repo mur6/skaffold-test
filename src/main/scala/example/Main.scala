@@ -7,6 +7,8 @@ import akka.http.scaladsl.server.Directives._
 import akka.management.cluster.bootstrap.ClusterBootstrap
 import akka.management.scaladsl.AkkaManagement
 import akka.stream.ActorMaterializer
+
+import scala.language.postfixOps
 import scala.concurrent.duration._
 
 object Main extends App {

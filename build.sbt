@@ -6,8 +6,8 @@ lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging, AshScriptPlugin, DockerPlugin)
   .settings(
     name := "akka-cluster-test",
-    scalaVersion := "2.12.8",
-    resolvers += Resolver.bintrayRepo("tanukkii007", "maven"),
+    scalaVersion := "2.13.1",
+    resolvers += "jitpack" at "https://jitpack.io",
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
       "com.typesafe.akka" %% "akka-stream" % akkaVersion,
@@ -18,8 +18,7 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-discovery" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion,
-      "com.github.TanUkkii007" %% "akka-cluster-custom-downing" % "0.0.13",
-      "com.ajjpj.simple-akka-downing" %% "simple-akka-downing" % "0.9.1",
+      "com.github.akka-cluster-custom-downing" % "akka-cluster-custom-downing" % "0d6f1fb0dbc0205c84fafa8ea8962fe1cf3ccf02",
       "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management" % akkaManagementVersion,
       "com.lightbend.akka.management" %% "akka-management-cluster-http" % akkaManagementVersion,
